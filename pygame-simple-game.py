@@ -2,6 +2,13 @@ import pygame
 import sys
 import random
 import pandas as pd
+data = {
+    'player': ['Eric', 'Bot'],
+    'score': [100, 80]
+}
+
+df = pd.DataFrame(data)
+df.to_csv('result.csv', index=False)
 
 # 初始化 Pygame
 pygame.init()
@@ -103,10 +110,4 @@ while running:
 # 退出 Pygame
 pygame.quit()
 sys.exit()
-data = {
-    'player': ['Eric', 'Bot'],
-    'score': [100, 80]
-}
 
-df = pd.DataFrame(data)
-df.to_csv('result.csv', index=False)
