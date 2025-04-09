@@ -31,8 +31,13 @@ jobs:
           python-version: '3.10'
 
       - name: 安裝 pygame
-        run: pip install pygame
+        run: pip install pygame pandas
 
       - name: 執行程式
         run: python pygame-simple-game.py
-
+        
+      - name: 上傳 CSV 輸出
+        uses: actions/upload-artifact@v4
+        with:
+          name: result-csv
+          path: result.csv
